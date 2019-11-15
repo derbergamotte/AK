@@ -1,4 +1,4 @@
-package com.name;
+package com.name.test28;
 import java.util.*;
 public class Main {
 
@@ -24,23 +24,24 @@ public class Main {
 		markList.add(novik);
 		markList.add(mielnikov);
 		markList.add(kozlovskij);
-		markList.size();
+		
+		System.out.println(getMaxMark(markList));
 
-		markList = remNeudMark(markList);
-		printMark(markList);
 	}
 	
-	public static List<Students> remNeudMark(List<Students> list) {
-		for (int i=0; i<list.size(); i++) {
+	public static int getMaxMark(List<Students> list) {
+		Iterator<Students> iter = list.iterator();
+		int maxMark = 1;
+		while (iter.hasNext()){
 			Students student = new Students();
-			student = list.get(i);
-			if (student.getMark()==1||student.getMark()==2||student.getMark()==3||student.getMark()==4) {
-				list.remove(i);
-			}
-			student = null;
-		}
-		return list;
+			student = iter.next();
+			int x = student.getMark();
+			if (x > maxMark) {
+				maxMark = x;
+			} 
+		}return maxMark;
 	}
+		
 	public static void printMark(List<Students> list) {
 		for (int i=0; i<list.size(); i++) {
 			Students student = new Students();

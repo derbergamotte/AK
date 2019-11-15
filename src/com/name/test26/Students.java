@@ -1,4 +1,4 @@
-package com.name;
+package com.name.test26;
 
 public class Students {
 	private String name;
