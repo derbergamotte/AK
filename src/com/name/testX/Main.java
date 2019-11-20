@@ -3,20 +3,26 @@ package com.name.testX;
 public class Main {
 
 	public static void main(String[] args) {
-		int a = 12; 
-		int b = 0;
-		double c = divisio(a, b);
-		System.out.println(c);
+	divisio(10, 7);
+		
 		
 	}
 	
-	public static double divisio(double x, double y) {
+	public static void divisio(int x, int y) {
 		try {
-			double result = (y!=0)? x/y: 1/0;
-			return result;
+			int c= x/y;
+			int d= x%y;
+			System.out.print(c+".");
+			for (int i=0; i<5 && d!=0; i++) {
+				c = d*10/y;
+				d = d*10%y;
+				System.out.print(c);
+			}
+			System.out.println();
+		
 		}catch(Exception e) {
 			System.out.println("Деление на ноль(a/0)!");
-			return 0;
+	
 		}
 	}
 
